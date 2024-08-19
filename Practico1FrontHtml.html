@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front 1.0</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        main, header{
+            padding: 10px;
+        }
+        footer{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #f1f1f1;
+            border-top: 1px solid #ccc;
+        }
+
+        table{
+            width: 15%;
+            border: 1px solid black;
+            border-collapse: separate;
+        }
+        thead{
+            text-align: center;
+        }
+        th,td{
+            border: 1px solid black;
+            padding: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Encabezado Principal</h1>
+        <ul>
+            <li><a href="#seccion1">Estructura</a></li>
+            <li><a href="#seccion2">Multimedia</a></li>
+            <li><a href="#seccion3">Formulario</a></li>
+        </ul>
+    </header>
+    <main>
+
+        <section>
+            <h2 id="seccion1">1. Estructura Básica del Documento HTML</h2>
+            <p>En este documento HTML tiene una estructura básica que incluye la declaración de DOCTYPE, etiquetas de metodos y un titulo.</p>
+        </section>
+
+        <section>
+            <h3>2. Encabezados y propiedades del texto</h3>
+            <p><b>Este es un texto en negrita</b></p>
+            <p><em>Este es un texto en cursiva</em></p>
+            <p><u>Este es un texto subrayado</u></p>
+        </section>
+
+        <section>
+                <h3>3. Divisiones y Agrupación de Contenido</h3>
+                <p>Parrafo del articulo 1</p>
+            <div>
+                <h4>Sección 1</h4>
+                <p>Contenido de la primera sección agrupada en un div.</p>
+            </div>
+            <div>
+                <h4>Sección 2</h4>
+                <p>Contenido de la segunda sección agrupada en un div.</p>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <h3>4. Enlaces y Listas</h3>
+                <p>Visita nuestro <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"> sitio web</a> para mas información</p>
+            </div>
+            <div>
+                <p>Enlaces internos:</p>
+                <ul>
+                    <li><a href="#seccion1">Ir a Estructura</a></li>
+                    <li><a href="#seccion2">Ir a Multimedia</a></li>
+                    <li><a href="#seccion3">Ir a Formulario</a></li>
+                </ul>
+                <p>Lista desordenada:</p>
+                <ul>
+                    <li>Primer ítem de una lista desordenada</li>
+                    <li>Segundo ítem de una lista desordenada</li>
+                </ul>
+                <p>Lista ordenada:</p>
+                <ol>
+                    <li>Primer ítem de una lista ordenada</li>
+                    <li>Segundo ítem de una lista ordenada</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h3 id="seccion2">5. Elementos Multimedia</h3>
+            <div>
+                <img src="https://pbs.twimg.com/media/F-HKCvgWwAARQtP.jpg" 
+                width="250px"
+                height="200px"
+                alt="jajaja si soy"/>
+                <video src="https://video-previews.elements.envatousercontent.com/5b3b6876-9689-4cfe-9692-1cf061a156f6/watermarked_preview/watermarked_preview.mp4"
+                controls
+                width="300px"
+                height="200px"></video>
+                <audio src="https://download.blender.org/peach/trailer/trailer_1080p.ogg"
+                controls></audio>
+            </div>
+        </section>
+
+        <section>
+            <h3>6. Tablas</h3>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Columna 1</th>
+                            <th>Columna 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dato 1</td>
+                            <td>Dato 2</td>
+                        </tr>
+                        <tr>
+                            <td>Dato 3</td>
+                            <td>Dato 4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h3 id="seccion3">7. Formulario</h3>
+            <div>
+                <form>
+                    <div>
+                        <label>Nombre:</label>
+                        <input type="text"/>
+                        <label>Email:</label>
+                        <input type="email"/>
+                        <label>Mensaje:</label>
+                        <textarea></textarea>
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h6>2024 Trabajo Práctico de HTML</h6>
+        <h5>Arnold Ignacio</h5>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 50%;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        tfoot{
+            font-weight: bold;
+            background-color: grey;
+        }
+
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        header,footer{
+            background-color: grey;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        main{
+            padding: 10px;
+        }
+        section{
+            margin-bottom: 20px;
+            border: 1px solid gray;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- encabezado -->
+    <div>
+        <h1>Soy h1</h1>
+        <h2>Soy h2</h2>
+        <h3>Soy h3</h3>
+        <h4>Soy h4</h4>
+        <h5>Soy h5</h5>
+        <h6>Soy h6</h6>
+    </div>
+
+    <!-- textos y propiedades -->
+    <div>
+        <h2>Titulo</h2>
+        <p>
+            <b>negrita</b> <strong>otra negrita</strong> salto de <br/>
+            linea <em>cursiba</em> <u>subrayado</u> <mark>resaltar</mark> <span>define la linea de texto</span>
+        </p>
+    </div>
+
+    <!-- enlaces -->
+    <div>
+        <nav>
+            <a href="https://www.google.com"> Enlace a google</a>
+            <br/>
+            <a href="https://www.google.com" target="_blank"> Enlace a google en una pestaña aparte</a>
+        </nav>
+    </div>
+
+    <!-- listas -->
+    <div>
+        <ol>
+            <li>Con</li>
+            <li>orden</li>
+            <li>numerico</li>
+        </ol>
+        <ul>
+            <li>Sin</li>
+            <li>orden</li>
+            <li>numerico</li>
+        </ul>
+    </div>
+
+    <!-- elementos multimedia -->
+    <div>
+        <img src="https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen-930x487.jpg" 
+        width="200 px"
+        height="200 px"
+        alt="es una imagen"/>
+    </div>
+    <div>
+        <video src="https://video-previews.elements.envatousercontent.com/5b3b6876-9689-4cfe-9692-1cf061a156f6/watermarked_preview/watermarked_preview.mp4"
+        controls
+        width="400 px"
+        height="400 px"
+        alt="muted y autoplay"/>
+    </div>
+    <div>
+        <audio src="https://download.blender.org/peach/trailer/trailer_1080p.ogg"
+        controls/>
+    </div>
+
+    <!-- tablas -->
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>columna 1</th>
+                    <th>columna 2</th>
+                    <th>columna 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>fila 1, celda 1</td>
+                    <td>fila 1, celda 2</td>
+                    <td>fila 1, celda 3</td>
+                </tr>
+                <tr>
+                    <td>fila 2, celda 1</td>
+                    <td>fila 2, celda 2</td>
+                    <td>fila 2, celda 3</td>
+                </tr>
+                <tr>
+                    <td>fila 3, celda 1</td>
+                    <td>fila 3, celda 2</td>
+                    <td>fila 3, celda 3</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>total 1</td>
+                    <td>total 2</td>
+                    <td>total 3</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <!-- formulario -->
+    <div>
+        <form>
+            <div>
+                <label>Email</label>
+                <input type="email" placeholder="ejemplo@lala.com"/>
+            </div>
+            <div>
+                <label>Usuario</label>
+                <input type="text" placeholder="Ingrese su usuario"/>
+            </div>
+            <div>
+                <label>Edad</label>
+                <input type="number" placeholder="Ingrese su edad"/>
+            </div>
+            <div>
+                <input type="date"/>
+            </div>
+            <div>
+                <input type="time"/>
+            </div>
+            <div>
+                <textarea placeholder="Ingrese su dia"></textarea>
+            </div>
+            <div>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- semantica -->
+    <header>
+        <h1>Encabezado</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Seccion 1</h2>
+            <p>Parrafo de la seccion 1</p>
+        </section>
+        <article>
+            <h2>Articulo 1</h2>
+            <p>Parrafo del articulo 1</p>
+        </article>
+    </main>
+    <footer>
+        <p>Parrafo del pie de pagina</p>
+    </footer>
+</body>
+</html>
