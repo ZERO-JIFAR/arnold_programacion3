@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    background-color: #3d3a3a;
+    color: white;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.section {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #444;
+}
+
+p{
+    text-decoration: underline;
+}
+
+blockquote {
+    font-style: italic;
+    padding: 10px;
+    border-left: 5px solid #ccc;
+    background-color: #f1f1f1;
+    margin-top: 10px;
+}
+
+.box {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #e9ecef;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.highlighted-box {
+    padding: 15px;
+    background-color: #ffe8c2;
+    border: 2px solid #444;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.relative-box {
+    top: 10px;
+    left: 10px;
+    padding: 20px;
+    background-color: #e6f7ff;
+    position: relative;
+    border: 1px solid #ccc;
+}
+
+.absolute-box {
+    font-size: 0.7rem;
+    padding: 10px;
+    background-color: #4dd0e1;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    border: 1px solid #007bff;
+    color: white;
+    border-radius: 4px;
+}
+
+/* Principios de Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.grid-item {
+    background-color: #7ea4ff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Principios de Animacion */
+.animation-container .animated-box.red-box:hover .move-container{
+    background-color: #ff7f7f;
+    transition: background-color 0.8s ease;
+}
+
+.animation-container .move-container {
+    display: flex;
+    align-items: center;
+    height: 200px;
+}
+
+.animated-box {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.red-box {
+    background-color: red;
+    animation: colorChange 2s infinite alternate;
+}
+
+.green-circle {
+    background-color: green;
+    border-radius: 50%;
+    margin-top: 10px;
+    animation: move 1s infinite alternate;
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: red;
+    }
+    50% {
+        background-color: yellow;
+    }
+    100% {
+        background-color: green;
+    }
+}
+
+@keyframes move {
+    from { transform: translateX(0); }
+    to { transform: translateX(50px); }
+}
+
+@keyframes grow {
+    from { transform: scale(1); }
+    to { transform: scale(1.5); }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-color: #f8d3f2;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .container {
+        padding: 20px;
+    }
+}

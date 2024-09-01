@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body {
+        background-image: url('https://img.freepik.com/vector-gratis/edificios-ciudad-moderna_1441-3042.jpg?w=826&t=st=1724985893~exp=1724986493~hmac=9adb7e79b072ca1266b7994e8cdb11c2ee13c7e34e6439c7eb3b7cf07042808a');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+    .conteiner{
+        border-radius: 2em;
+        border: 5px solid #414141;
+        width: 40%;
+        height: 40%;
+        background-color: rgb(138, 138, 138);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    form, img{
+        margin: 0 auto;
+        width: 90%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2em;
+        gap: 10px;
+    }
+    header{
+        background-color: rgb(188, 251, 255);
+        width: 100%;
+        height: 8vh;
+    }
+    input{
+        background-color: white;
+    }
+    button{
+        background-color: rgb(162, 253, 253);
+        border-radius: 5px;
+        width: 30%;
+        height: 4vh;
+    }
+    input{
+        border-radius: 5px;
+    }
+    main{
+        width: 100%;
+        height: 92vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    
+    </header>
+    <main>
+        <div class="conteiner">
+            <img src="https://i.pinimg.com/736x/a6/d7/b7/a6d7b7ba8d27f379bc0917a33c91d284.jpg" alt="miau">
+            <form action="/my-handling-form-page" method="post">
+                <h2><b>Ingresar</b></h2>
+                <input type="email" placeholder="Email" id="mail" name="user_mail" />
+                <input type="password" placeholder="Contraseña" id="password" name="password"></input>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>
