@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practico Javascrpt</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="/main.js" defer></script>
+
+    <div>
+      <h3>7. Introduccion al DOM</h3>
+      <h4>Ejercicio 1:</h4>
+      <p>Este es el primer parrafo.</p>
+      <p>Este es el segundo parrafo.</p>
+      <p>Este es el tercer parrafo.</p>
+      <button onclick="cambiarColor()">Cambiar color a azul</button>
+    </div>
+    <div>
+      <h4>Ejercicio 2: Formulario con alerta</h4>
+      <form id="miFormulario">
+        <label for="campoTexto">Ingresa un texto:</label>
+        <input type="text" id="campoTexto" name="campoTexto">
+        <button type="button" onclick="mostrarAlerta()">Mostrar Alerta</button>
+      </form>
+    </div>
+
+    <div>
+      <h3>8. Eventos en DOM</h3>
+      <h4>Ejercicio 1:</h4>
+      <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Ejercicio 2: Campo de texto y botones</h4>
+      <input type="text" id="miCampoTexto" placeholder="Ingresa algo">
+      <button id="deshabilitarBtn">Deshabilitar Campo</button>
+      <button id="habilitarBtn">Habilitar Campo</button>
+    </div>
+
+    <div>
+      <h3>9. LocalStorage</h3>
+      <h4>Ejercicio 1:</h4>
+      <form id="formularioCorreo">
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" required>
+        <button type="submit">Guardar Correo</button>
+      </form>
+      <div id="correoGuardado"></div>
+      <button id="eliminarCorreo" style="display:none;">Eliminar Correo Guardado</button>
+    </div>
+  </body>
+</html>
