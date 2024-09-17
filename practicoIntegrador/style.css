@@ -1,0 +1,15 @@
+.container_principalHeader{
+    width: 100vw;
+    height: 8vh;
+    background-color: rgb(80, 80, 249);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.container_contentHeder{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem;
+}
