@@ -1,13 +1,13 @@
-console.log("Corriendo desde typescript");
-//Ejercicio 3
-var nombre = 'Bautista';
-var edad = 30;
+// Ejercicio 3
+var nombre = 'Hola, TypeScript!';
+var edad = 123;
 var esActivo = true;
-var fechaNacimiento = new Date('1994-07-19');
-// Obtener el elemento HTML donde se mostrarán los valores (suponiendo que siempre existe)
+var fechaNacimiento = new Date('2024-09-08');
+var dia = fechaNacimiento.getDate() + 1;
+var mes = fechaNacimiento.getMonth() + 1;
+var año = fechaNacimiento.getFullYear();
 var resultadoDiv = document.getElementById('variables');
-// Mostrar los valores en el HTML
-resultadoDiv.innerHTML = "\n    <p>Nombre: ".concat(nombre, "</p>\n    <p>Edad: ").concat(edad, "</p>\n    <p>Activo: ").concat(esActivo, "</p>\n    <p>Fecha de Nacimiento: ").concat(fechaNacimiento.toDateString(), "</p>\n");
+resultadoDiv.innerHTML = "\n    <p>Texto: ".concat(nombre, "</p>\n    <p>Numero: ").concat(edad, "</p>\n    <p>Booleano: ").concat(esActivo, "</p>\n    <p>Fecha: ").concat(dia, "/").concat(mes, "/").concat(año, "</p>\n");
 //Ejercicio 4
 function convertirNumeroACadena(numero) {
     return numero.toString();
@@ -20,7 +20,7 @@ function mostrarResultado() {
         var numero_1 = parseFloat(inputNumero);
         if (!isNaN(numero_1)) {
             var resultado_1 = convertirNumeroACadena(numero_1);
-            resultadoElement.innerText = "El n\u00FAmero en cadena es: ".concat(resultado_1);
+            resultadoElement.innerText = "Numero convertido a cadena: ".concat(resultado_1);
         }
         else {
             resultadoElement.innerText = "Por favor ingresa un número válido.";
@@ -40,7 +40,7 @@ function mostrarSuma() {
     var suma = sumarElementosArray(numeros);
     var resultadoElement = document.getElementById("resultado");
     if (resultadoElement) {
-        resultadoElement.innerText = "La suma de los n\u00FAmeros es: ".concat(suma);
+        resultadoElement.innerText = "Suma del array: ".concat(suma);
     }
 }
 var sumarBtn = document.getElementById("sumarBtn");
@@ -52,20 +52,18 @@ var estudiante = {
     edad: 21,
     curso: "Ingeniería de Software"
 };
-// Función para mostrar el estudiante en el HTML
 function mostrarEstudiante(estudiante) {
     var resultado = document.getElementById('resultadoEstudiante');
     if (resultado) {
         resultado.innerHTML = "\n            <p><strong>Estudiante:</strong> ".concat(estudiante.nombre, "</p>\n            <p><strong>Edad:</strong> ").concat(estudiante.edad, "</p>\n            <p><strong>Curso:</strong> ").concat(estudiante.curso, "</p>\n        ");
     }
 }
-// Crear una dirección utilizando el tipo personalizado
+mostrarEstudiante(estudiante);
 var miDireccion = {
     calle: 'Av. de la Constitución 10',
     ciudad: 'Madrid',
     codigoPostal: '2814'
 };
-// Función para mostrar la dirección en el HTML
 function mostrarDireccion() {
     var direccionElement = document.getElementById("direccion");
     if (direccionElement) {
@@ -73,8 +71,6 @@ function mostrarDireccion() {
     }
 }
 window.onload = mostrarDireccion;
-mostrarEstudiante(estudiante);
-// Implementar la interfaz en un objeto
 var usuario = {
     nombre: 'Ana',
     correo: 'ana@gmail.com',
@@ -82,7 +78,6 @@ var usuario = {
         return "Hola, mi nombre es ".concat(this.nombre, " y mi correo es ").concat(this.correo, ".");
     }
 };
-// Función para mostrar el saludo en el HTML
 function mostrarSaludo() {
     var saludoElement = document.getElementById("saludo");
     if (saludoElement) {

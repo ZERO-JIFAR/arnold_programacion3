@@ -1,65 +1,54 @@
-console.log("Corriendo desde typescript");
-
 // Ejercicio 3
-const nombre: string = 'Bautista';
-const edad: number = 30;
+const nombre: string = 'Hola, TypeScript!';
+const edad: number = 123;
 const esActivo: boolean = true;
-const fechaNacimiento: Date = new Date('1994-07-19');
-
-// Obtener el elemento HTML donde se mostrarán los valores (suponiendo que siempre existe)
+const fechaNacimiento: Date = new Date('2024-09-08');
+const dia = fechaNacimiento.getDate() + 1;
+const mes = fechaNacimiento.getMonth() + 1;
+const año = fechaNacimiento.getFullYear();
 const resultadoDiv = document.getElementById('variables') as HTMLElement;
-
-// Mostrar los valores en el HTML
 resultadoDiv.innerHTML = `
-    <p>Nombre: ${nombre}</p>
-    <p>Edad: ${edad}</p>
-    <p>Activo: ${esActivo}</p>
-    <p>Fecha de Nacimiento: ${fechaNacimiento.toDateString()}</p>
+    <p>Texto: ${nombre}</p>
+    <p>Numero: ${edad}</p>
+    <p>Booleano: ${esActivo}</p>
+    <p>Fecha: ${dia}/${mes}/${año}</p>
 `;
 
 //Ejercicio 4
 function convertirNumeroACadena(numero: number): string {
     return numero.toString();
 }
-
 function mostrarResultado() {
     const inputNumeroElement = document.getElementById("inputNumero") as HTMLInputElement | null;
     const resultadoElement = document.getElementById("resultado");
-
     if (inputNumeroElement && resultadoElement) {
         const inputNumero = inputNumeroElement.value;
         const numero = parseFloat(inputNumero);
-        
         if (!isNaN(numero)) {
             const resultado = convertirNumeroACadena(numero);
-            resultadoElement.innerText = `El número en cadena es: ${resultado}`;
+            resultadoElement.innerText = `Numero convertido a cadena: ${resultado}`;
         } else {
-            resultadoElement.innerText = "Por favor ingresa un número válido.";
+            resultadoElement.innerText = "Por favor ingresa un numero valido.";
         }
     }
 }
-
 const convertirBtn = document.getElementById("convertirBtn");
 if (convertirBtn) {
     convertirBtn.addEventListener("click", mostrarResultado);
 }
 
 //Ejercicio 5
-
 function sumarElementosArray(numeros: number[]): number {
     return numeros.reduce((acumulador, valorActual) => acumulador + valorActual, 0);
 }
-
 function mostrarSuma() {
     const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
     const suma = sumarElementosArray(numeros);
     const resultadoElement = document.getElementById("resultado");
-
     if (resultadoElement) {
-        resultadoElement.innerText = `La suma de los números es: ${suma}`;
+        resultadoElement.innerText = `Suma del array: ${suma}`;
     }
 }
-
 const sumarBtn = document.getElementById("sumarBtn");
 if (sumarBtn) {
     sumarBtn.addEventListener("click", mostrarSuma);
@@ -71,14 +60,11 @@ interface Estudiante {
     edad: number;
     curso: string;
 }
-
 const estudiante: Estudiante = {
-    nombre: "Rodrigo Vega",
-    edad: 21,
-    curso: "Ingeniería de Software"
+    nombre: "Juan",
+    edad: 20,
+    curso: "Matematicas"
 };
-
-// Función para mostrar el estudiante en el HTML
 function mostrarEstudiante(estudiante: Estudiante): void {
     const resultado = document.getElementById('resultadoEstudiante');
     if (resultado) {
@@ -89,6 +75,7 @@ function mostrarEstudiante(estudiante: Estudiante): void {
         `;
     }
 }
+mostrarEstudiante(estudiante);
 
 //Ejercicio 7
 type Direccion = {
@@ -96,29 +83,12 @@ type Direccion = {
     ciudad: string;
     codigoPostal: string;
 };
-
-// Crear una dirección utilizando el tipo personalizado
 const miDireccion: Direccion = {
-    calle: 'Av. de la Constitución 10',
+    calle: 'Av. de la Constitucion 10',
     ciudad: 'Madrid',
     codigoPostal: '2814'
 };
-
-// Función para mostrar la dirección en el HTML
-function mostrarDireccion() {
-    const direccionElement = document.getElementById("direccion");
-
-    if (direccionElement) {
-        direccionElement.innerHTML = `
-            <p>Dirección: Calle: ${miDireccion.calle}, Ciudad: ${miDireccion.ciudad}, CP: ${miDireccion.codigoPostal}</p>
-        `;
-    }
-}
-
-window.onload = mostrarDireccion;
-
-
-mostrarEstudiante(estudiante);
+resultadoDiv!.innerHTML += `<p>Dirección: Calle:${miDireccion.calle}, Ciudad:${miDireccion.ciudad}, CP:${miDireccion.codigoPostal}</p>`;
 
 //Ejercicio 8
 interface Usuario {
@@ -126,8 +96,6 @@ interface Usuario {
     correo: string;
     saludar(): string;
 }
-
-// Implementar la interfaz en un objeto
 const usuario: Usuario = {
     nombre: 'Ana',
     correo: 'ana@gmail.com',
@@ -135,33 +103,23 @@ const usuario: Usuario = {
         return `Hola, mi nombre es ${this.nombre} y mi correo es ${this.correo}.`;
     }
 };
+resultadoDiv!.innerHTML += `<p>${usuario.saludar()}</p>`;
 
-// Función para mostrar el saludo en el HTML
-function mostrarSaludo() {
-    const saludoElement = document.getElementById("saludo");
-
-    if (saludoElement) {
-        saludoElement.innerText = usuario.saludar();
-    }
-}
-window.onload = mostrarSaludo;
 
 //Ejercicio 9
 class Persona {
     nombre: string;
     edad: number;
-
     constructor(nombre: string, edad: number) {
         this.nombre = nombre;
         this.edad = edad;
     }
-
     presentarse(): string {
         return `Hola, me llamo ${this.nombre} y tengo ${this.edad} años.`;
     }
 }
 
-// Crear una instancia de Persona y mostrar la presentación en el HTML
+// Crear una instancia de Persona y mostrar la presentacion en el HTML
 const persona = new Persona('Federico', 30);
 const resultado = persona.presentarse();
 
@@ -206,25 +164,25 @@ function identidad<T>(valor: T): T {
     return valor;
 }
 
-// Usar la función con diferentes tipos de datos
+// Usar la funcion con diferentes tipos de datos
 const numero: number = 42;
 const texto: string = 'Hola, TypeScript!';
 const booleano: boolean = true;
 const fecha: Date = new Date();
 
-// Obtener los resultados usando la función identidad
+// Obtener los resultados usando la funcion identidad
 const resultadoNumero = identidad(numero);
 const resultadoTexto = identidad(texto);
 const resultadoBooleano = identidad(booleano);
 const resultadoFecha = identidad(fecha);
 
-// Función para mostrar los resultados en el HTML
+// Funcion para mostrar los resultados en el HTML
 function mostrarResultados() {
     const resultadosElement = document.getElementById("resultadoFuncion");
 
     if (resultadosElement) {
         resultadosElement.innerHTML = `
-            <p>Número: ${resultadoNumero}</p>
+            <p>Numero: ${resultadoNumero}</p>
             <p>Texto: ${resultadoTexto}</p>
             <p>Booleano: ${resultadoBooleano}</p>
             <p>Fecha: ${resultadoFecha.toDateString()}</p>
@@ -234,22 +192,16 @@ function mostrarResultados() {
 window.onload = mostrarResultados;
 
 //Ejercicio 12
-
 enum Color {
     Rojo = "Rojo",
     Verde = "Verde",
     Azul = "Azul"
 }
-
-// Asignar un color favorito a una variable
-const colorFavorito: Color = Color.Verde;
-
-// Función para mostrar el color en el HTML
+const colorFavorito: Color = Color.Azul;
 function mostrarColorFavorito(color: Color): void {
     const resultadoColor = document.getElementById('resultadoColor');
     if (resultadoColor) {
         resultadoColor.innerHTML = `<p><strong>Color favorito:</strong> ${color}</p>`;
     }
 }
-
 mostrarColorFavorito(colorFavorito);
