@@ -4,8 +4,6 @@ import { handleGetProductLocalStorage, setInLocalStorage } from "../persistence/
 import { closeModal } from "../views/modal";
 import { handleGetProductsToStorage, handleRenderList } from "../views/store";
 
-/*=====PRODUCT=====*/
-
 const acceptButton= document.getElementById("acceptButton");
 acceptButton.addEventListener("click", ()=>{
     handleSaveOrModifyElements();

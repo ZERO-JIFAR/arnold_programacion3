@@ -2,7 +2,6 @@ import { productoActivo, setProductoActivo } from "../../main";
 import { handleDeleteProduct } from "../services/products";
 
 /*=====POPUP=====*/
-
 const cancelButton= document.getElementById("cancelButton");
 cancelButton.addEventListener("click", ()=>{
     closeModal();
@@ -19,7 +18,6 @@ export const openModal= ()=>{
     } else {
         buttonDelete.style.display= "none";
     }
-
     if (productoActivo) {
         const nombre= document.getElementById("nombre"),
             imagen= document.getElementById("img"),

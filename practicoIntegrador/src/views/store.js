@@ -2,8 +2,6 @@ import { setProductoActivo } from "../../main";
 import { handleGetProductLocalStorage } from "../persistence/localstorage";
 import { openModal } from "./modal";
 
-/*=====STORE=====*/
-
 export const handleGetProductsToStorage= ()=>{
     const products= handleGetProductLocalStorage();
     handleRenderList(products);
@@ -13,7 +11,6 @@ export const handleRenderList= (productosIn)=>{
     const burgers= productosIn.filter((el)=> el.categories === "Hamburguesas");
     const papas= productosIn.filter((el)=> el.categories === "Papas");
     const gaseosas= productosIn.filter((el)=> el.categories === "Gaseosas");
-
     const renderProductGroup= (productos, title)=>{
         if (productos.length > 0){
             const productosHTML= productos.map((producto, index)=>{

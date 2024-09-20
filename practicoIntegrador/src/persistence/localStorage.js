@@ -1,5 +1,3 @@
-/*=====LOCALSTORAGE=====*/
-
 //traer productos localStorage
 export const handleGetProductLocalStorage= ()=>{
     const products= JSON.parse(localStorage.getItem("products"));

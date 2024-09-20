@@ -2,8 +2,6 @@ import { categoriaActiva } from "../../main";
 import { handleGetProductLocalStorage } from "../persistence/localstorage";
 import { handleRenderList } from "../views/store";
 
-/*=====CATEGORIA=====*/
-
 const handleFilterProductsByCategory= (categoryIn)=>{
     const products= handleGetProductLocalStorage();
     switch (categoryIn) {
