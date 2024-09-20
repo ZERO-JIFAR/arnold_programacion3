@@ -1,55 +1,33 @@
-import { setInLocalStorage } from "./src/persistence/localstorage";
 import { renderCategories } from "./src/services/categories";
-import './style.css';
-renderCategories();
+import { handleSearchProductByName } from "./src/services/searchBar";
+import { openModal } from "./src/views/modal";
+import { handleGetProductsToStorage } from "./src/views/store";
+import "./style.css"
 
-/*===Product===*/
-const buttonAdd = document.getElementById("buttonAddElement");
+/*=====ALICACION=====*/
 
-buttonAdd.addEventListener('click', ()=>{
-    openModal();
-});
-
-/*===POPUP===*/
-const cancelButton = document.getElementById("cancelButton");
-cancelButton.addEventListener('click',()=>{
-    handleCancelButton();
-})
-
-const handleCancelButton = ()=>{
-    closeModal()
+export let categoriaActiva= null;
+export const setCategoriaActiva= (categoriaIn)=>{
+    categoriaActiva= categoriaIn;
 }
 
-//FUNCIONES ABRIR CERRAR MODAL
-const openModal = ()=>{
-    const modal = document.getElementById("modalPopUP");
-    modal.style.display = "flex";
-};
-const closeModal = ()=>{
-    const modal = document.getElementById("modalPopUP");
-    modal.style.display = "none";
-};
+export let productoActivo= null;
+export const setProductoActivo= (productoIn)=>{
+    productoActivo= productoIn;
+}
 
-/*guardar o modificar elementos */
-const acceptButton = document.getElementById("acceptButton");
-acceptButton.addEventListener("click",()=>{
-    handleSaveOrModifyElements();
-});
+handleGetProductsToStorage();
+renderCategories();
 
-const handleSaveOrModifyElements=()=>{
-    const nombre = document.getElementById("nombre").value,
-    imagen = document.getElementById("img").value,
-    precio = document.getElementById("precio").value,
-    categorias = document.getElementById("categoria").value;
+/*=====HEADER=====*/
 
-    let object ={
-        id: new Date().toISOString(),
-        nombre,
-        imagen,
-        precio,
-        categorias
-    };
+const buttonAdd= document.getElementById("buttonAddElement");
+buttonAdd.addEventListener("click", ()=>{
+    openModal();
+})
 
-    setInLocalStorage(object);
-    //closeModal()
-};
+//buttonSearch
+const buttonSearch= document.getElementById("buttonSearch")
+buttonSearch.addEventListener("click", ()=>{
+    handleSearchProductByName();
+})
