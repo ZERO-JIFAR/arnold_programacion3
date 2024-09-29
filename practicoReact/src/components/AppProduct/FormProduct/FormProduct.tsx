@@ -4,10 +4,10 @@ import { FC } from "react";
 
 interface IPropsFormProduct {
     //Original
-    //handleAppProduct: Function;
+    handleAppProduct: Function;
 
     //Segun ChatGPT
-    handleAppProduct: (product: { nombre: string; imagen: string; precio: number }) => void;
+    //handleAppProduct: (product: { nombre: string; imagen: string; precio: number }) => void;
 }
 
 export const FormProduct: FC<IPropsFormProduct> = ({handleAppProduct}) => {
