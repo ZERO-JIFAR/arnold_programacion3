@@ -2,8 +2,12 @@ import { Button, Form } from "react-bootstrap";
 import { useForm } from "../../../hooks/useForm";
 import { FC } from "react";
 
-interface IPropsFormProduct{
-    handleAppProduct: Function;
+interface IPropsFormProduct {
+    //Original
+    //handleAppProduct: Function;
+
+    //Segun ChatGPT
+    handleAppProduct: (product: { nombre: string; imagen: string; precio: number }) => void;
 }
 
 export const FormProduct: FC<IPropsFormProduct> = ({handleAppProduct}) => {
@@ -13,7 +17,7 @@ export const FormProduct: FC<IPropsFormProduct> = ({handleAppProduct}) => {
         precio: 0,
     })
 
-    const handleSubmitForm = () =>{
+    const handleSubmitForm = () => {
         handleAppProduct(values);
         resetForm();
     };
@@ -30,7 +34,7 @@ export const FormProduct: FC<IPropsFormProduct> = ({handleAppProduct}) => {
                 onChange={handleChange}
                 />
             </Form.Group>
-            <Form.Group controlId="formNombre">
+            <Form.Group controlId="formImagen">
                 <Form.Label>Imagen</Form.Label>
                 <Form.Control
                 type="text"
@@ -40,7 +44,7 @@ export const FormProduct: FC<IPropsFormProduct> = ({handleAppProduct}) => {
                 onChange={handleChange}
                 />
             </Form.Group>
-            <Form.Group controlId="formNombre">
+            <Form.Group controlId="formPrecio">
                 <Form.Label>Precio</Form.Label>
                 <Form.Control
                 type="number"
