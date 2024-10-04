@@ -2,6 +2,8 @@ import { Button, Form } from "react-bootstrap"
 import styles from './Login.module.css'
 import { FormEvent, useState } from "react";
 import { useForm } from "../../../hooks/useForm";
+import { useAppDispatch } from "../../../hooks/redux";
+import { setLogin } from "../../../redux/slices/auth";
 
 export const Login = () => {
     const[showPass, setShowPass]=useState(false);
@@ -13,9 +15,17 @@ export const Login = () => {
 
     const {user, password} = values;
 
-    const handleSubmitForm = (e:FormEvent<HTMLFormElement>) => {
+    const dispatch = useAppDispatch();
+
+    const handleSubmitForm = async (e:FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(user, password)
+        const response = await fetch ("/user.json");
+        const usersData = await response.json();
+        const userFound = usersData.users.find((u: {username: string; 
+            password: string}) => u.username == user && u.password == password);
+        if(userFound){
+            dispatch(setLogin(user))
+        }
     }
 
     return (
