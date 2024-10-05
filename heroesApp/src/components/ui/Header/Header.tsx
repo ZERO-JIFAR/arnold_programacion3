@@ -1,16 +1,19 @@
 import { Container, Nav, Navbar } from "react-bootstrap"
 import { Link } from "react-router-dom";
+import { useAppDispatch } from "../../../hooks/redux";
+import { setLogout } from "../../../redux/slices/auth";
 
 export const Header = () => {
+    const dispatch = useAppDispatch()
     const handleLogout = () => {
-        
+        dispatch(setLogout());
     };
     return (
         <Navbar bg="dark" data-bs-theme="dark">
             <Container>
                 <Navbar.Brand>
-                    <Link to={"/home"} className="nav-link">
-                        Buscar heroe
+                    <Link to={"/"} className="nav-link">
+                        Inicio
                     </Link>
                 </Navbar.Brand>
                 <Nav className="me-auto">
